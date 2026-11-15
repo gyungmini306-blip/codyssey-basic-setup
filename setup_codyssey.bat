@@ -32,19 +32,19 @@ where winget >nul 2>nul
 if errorlevel 1 goto winget_missing
 echo.
 echo Google Chrome 설치 중...
-winget install --id Google.Chrome --exact --accept-package-agreements --accept-source-agreements
+call winget install --id Google.Chrome --exact --accept-package-agreements --accept-source-agreements
 if errorlevel 1 echo [확인 필요] Google Chrome 설치에 실패했습니다.
 echo.
 echo Visual Studio Code 설치 중...
-winget install --id Microsoft.VisualStudioCode --exact --accept-package-agreements --accept-source-agreements
+call winget install --id Microsoft.VisualStudioCode --exact --accept-package-agreements --accept-source-agreements
 if errorlevel 1 echo [확인 필요] Visual Studio Code 설치에 실패했습니다.
 echo.
 echo Git 설치 중...
-winget install --id Git.Git --exact --accept-package-agreements --accept-source-agreements
+call winget install --id Git.Git --exact --accept-package-agreements --accept-source-agreements
 if errorlevel 1 echo [확인 필요] Git 설치에 실패했습니다.
 echo.
 echo Python 3.13 설치 중...
-winget install --id Python.Python.3.13 --exact --accept-package-agreements --accept-source-agreements
+call winget install --id Python.Python.3.13 --exact --accept-package-agreements --accept-source-agreements
 if errorlevel 1 echo [확인 필요] Python 3.13 설치에 실패했습니다.
 echo.
 echo 기본 프로그램 설치 단계가 끝났습니다.
@@ -80,10 +80,10 @@ goto menu
 :install_python_packages
 where py >nul 2>nul
 if errorlevel 1 goto python_missing
-py -3.13 --version >nul 2>nul
+call py -3.13 --version >nul 2>nul
 if errorlevel 1 goto python313_missing
 if not exist "requirements-codyssey.txt" goto requirements_missing
-if not exist ".venv\Scripts\python.exe" py -3.13 -m venv .venv
+if not exist ".venv\Scripts\python.exe" call py -3.13 -m venv .venv
 if errorlevel 1 goto venv_failed
 ".venv\Scripts\python.exe" -m pip install --upgrade pip
 if errorlevel 1 echo [확인 필요] pip 업데이트에 실패했습니다.
@@ -100,7 +100,7 @@ where winget >nul 2>nul
 if errorlevel 1 goto winget_missing
 echo Docker Desktop은 관리자 권한, WSL 2 및 하드웨어 가상화가 필요할 수 있습니다.
 echo 설치가 진행되는 동안 이 창을 닫지 마세요.
-winget install --id Docker.DockerDesktop --exact --accept-package-agreements --accept-source-agreements
+call winget install --id Docker.DockerDesktop --exact --accept-package-agreements --accept-source-agreements
 if errorlevel 1 echo [확인 필요] Docker Desktop 설치가 완료되지 않았습니다.
 echo Docker 설치 단계가 끝났습니다.
 pause

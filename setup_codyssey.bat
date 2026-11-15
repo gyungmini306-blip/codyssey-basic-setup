@@ -1,9 +1,4 @@
 @echo off
-if /i not "%~1"=="--run" (
-    start "Codyssey Basic Setup" "%ComSpec%" /d /k ""%~f0" --run"
-    exit /b 0
-)
-shift
 setlocal EnableExtensions
 chcp 65001 >nul
 cd /d "%~dp0"

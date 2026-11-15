@@ -1,29 +1,26 @@
 # 코디세이 기초 프로그램 패키지
 
-Windows PC에서 코디세이 학습에 필요한 개발 환경을 설치합니다. PC가 초기화되면 인터넷에 연결한 뒤 설치기를 다시 실행하세요.
+코디세이 학습에 필요한 Windows 개발 환경 설치 도구입니다.
 
 ## 사용 방법
 
-1. 저장소에서 Code → Download ZIP을 선택하고 압축을 풉니다.
-2. 폴더 안의 setup_codyssey.bat을 더블클릭합니다.
-3. 메뉴에서 필요한 작업을 선택합니다. 실행 시 별도 명령 프롬프트 창이 열리며 결과를 확인할 수 있도록 유지됩니다.
+1. GitHub 저장소에서 ZIP을 내려받아 압축을 풉니다.
+2. setup_codyssey.bat을 실행합니다.
+3. 메뉴에서 필요한 설치 항목을 선택합니다. 설치 과정이 끝나도 메뉴로 돌아오며, Q를 선택해야 종료됩니다.
 
-## 설치 메뉴
+## 메뉴
 
-1. 기본 프로그램: Google Chrome, Visual Studio Code, Git, Python 3.13
-2. VS Code 확장: 한국어 언어팩, Python, Pylance
-3. Python 패키지: NumPy, pandas, Matplotlib, seaborn, scikit-learn, Jupyter를 저장소 폴더의 .venv 가상환경에 설치
-4. Docker Desktop
-5. 전체 설치: 위 항목을 순서대로 실행
+1. Google Chrome, Visual Studio Code, Git, Python 3.13을 winget으로 설치합니다.
+2. 현재 사용자 계정에 VS Code 한국어 언어팩, Python, Pylance 확장을 설치하고 한국어 언어를 설정합니다. 관리자 권한이 필요한 별도 PowerShell 파일은 사용하지 않습니다.
+3. 저장소 폴더의 .venv 가상환경에 requirements-codyssey.txt의 패키지를 설치합니다.
+4. Docker Desktop을 설치합니다. Docker는 WSL 2, 가상화 및 관리자 권한을 요구할 수 있습니다.
 
-설치 후 새 명령 프롬프트에서 git --version, py -3.13 --version, code --version 명령으로 확인할 수 있습니다.
+## 제공된 2주차 사전 설치 BAT 관련
 
-Python 패키지 가상환경은 저장소 폴더에서 .venv\Scripts\activate 명령으로 활성화합니다.
+제공된 VSCODE_SETUP.bat은 C:\vscode\setup_user.ps1을 호출하지만, 압축 파일에는 해당 PowerShell 스크립트가 포함되어 있지 않습니다. 이 저장소의 설치기는 그 누락된 경로에 의존하지 않고, VS Code 확장 설치와 한국어 설정을 BAT 안에서 처리합니다.
 
 ## 참고
 
-- 설치는 winget과 인터넷 연결을 사용합니다. Microsoft Store의 앱 설치 관리자(App Installer)가 필요합니다.
-- 학교/공용 PC의 권한이나 네트워크 정책으로 설치가 차단될 수 있습니다.
-- Docker Desktop은 WSL 2 및 하드웨어 가상화가 필요할 수 있으며 재부팅이나 추가 설정을 요구할 수 있습니다.
-- 이 도구는 프로그램 설치기이며, PC 초기화로 삭제된 과제 파일을 복구하지 않습니다. 과제 파일은 별도로 GitHub 등에 백업하세요.
-- 설치 프로그램 자체는 저장소에 포함하지 않습니다. winget을 통해 공급자 배포본으로 설치합니다.
+- 설치에는 인터넷과 winget(App Installer)이 필요합니다. 학교 또는 공용 PC의 권한·네트워크 정책에 따라 설치가 차단될 수 있습니다.
+- Docker Desktop은 WSL 2와 하드웨어 가상화가 필요할 수 있습니다.
+- 이 도구는 프로그램을 설치하며, PC 초기화로 삭제된 과제 파일은 복구하지 않습니다. 과제 파일은 별도 저장소나 클라우드에 백업하세요.

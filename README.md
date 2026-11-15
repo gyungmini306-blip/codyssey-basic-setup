@@ -1,39 +1,29 @@
 # 코디세이 기초 프로그램 패키지
 
-코디세이 학습용 Windows 개발 환경을 빠르게 다시 준비하기 위한 설치 스크립트 모음입니다. 재부팅 때마다 PC 환경이 초기화되는 경우, 네트워크 연결 후 `setup_codyssey.bat`을 다시 실행할 수 있습니다.
+Windows PC에서 코디세이 학습에 필요한 개발 환경을 설치합니다. PC가 초기화되면 인터넷에 연결한 뒤 설치기를 다시 실행하세요.
 
-## 기본 설치 항목
+## 사용 방법
 
-- Google Chrome
-- Visual Studio Code
-- Git
-- Python 3.13
-- VS Code 한국어 언어팩
-- VS Code Python 및 Pylance 확장
+1. 저장소에서 Code → Download ZIP을 선택하고 압축을 풉니다.
+2. 폴더 안의 setup_codyssey.bat을 더블클릭합니다.
+3. 메뉴에서 필요한 작업을 선택합니다. 실행 시 별도 명령 프롬프트 창이 열리며 결과를 확인할 수 있도록 유지됩니다.
 
-## 설치 방법
+## 설치 메뉴
 
-1. 저장소의 **Code → Download ZIP**을 선택해 내려받고 압축을 풉니다.
-2. `setup_codyssey.bat`을 실행합니다.
-3. 설치가 끝나면 VS Code를 새로 열고 터미널에서 아래 명령으로 설치 여부를 확인합니다.
+1. 기본 프로그램: Google Chrome, Visual Studio Code, Git, Python 3.13
+2. VS Code 확장: 한국어 언어팩, Python, Pylance
+3. Python 패키지: NumPy, pandas, Matplotlib, seaborn, scikit-learn, Jupyter를 저장소 폴더의 .venv 가상환경에 설치
+4. Docker Desktop
+5. 전체 설치: 위 항목을 순서대로 실행
 
-```bat
-git --version
-py -3.13 --version
-code --version
-```
+설치 후 새 명령 프롬프트에서 git --version, py -3.13 --version, code --version 명령으로 확인할 수 있습니다.
 
-설치기는 `winget`을 사용합니다. 인터넷 연결이 필요하며, 학교/공용 PC의 정책이나 관리자 권한 설정에 따라 일부 프로그램 설치가 차단될 수 있습니다. 이 경우 관리자에게 설치 가능 여부를 확인해야 합니다.
+Python 패키지 가상환경은 저장소 폴더에서 .venv\Scripts\activate 명령으로 활성화합니다.
 
-## 선택 설치
+## 참고
 
-- `install_python_packages.bat`: 프로젝트별 `.venv` 가상환경에 NumPy, pandas, Matplotlib, seaborn, scikit-learn, Jupyter를 설치합니다.
-- `install_docker_optional.bat`: Docker Desktop을 설치합니다. Docker Desktop은 PC의 WSL 2 기능 및 가상화 설정이 필요할 수 있으며, 이 스크립트는 Windows 기능을 자동으로 켜거나 재부팅하지 않습니다.
-
-## 데이터 보관
-
-이 저장소는 프로그램을 다시 설치하는 도구이며, PC 초기화로 삭제된 과제 파일을 복구하지는 않습니다. 과제 코드와 문서는 별도 GitHub 저장소에 커밋하거나 개인 클라우드에 백업하세요. 공용 PC에서 개인 계정 로그인 상태나 인증 정보를 저장하지 마세요.
-
-## 라이선스 및 출처
-
-이 저장소에는 프로그램 설치 파일을 포함하지 않습니다. `winget`을 통해 각 공급자의 설치 경로에서 내려받습니다. 각 프로그램의 사용 조건과 라이선스는 해당 공급자가 정한 내용을 따릅니다.
+- 설치는 winget과 인터넷 연결을 사용합니다. Microsoft Store의 앱 설치 관리자(App Installer)가 필요합니다.
+- 학교/공용 PC의 권한이나 네트워크 정책으로 설치가 차단될 수 있습니다.
+- Docker Desktop은 WSL 2 및 하드웨어 가상화가 필요할 수 있으며 재부팅이나 추가 설정을 요구할 수 있습니다.
+- 이 도구는 프로그램 설치기이며, PC 초기화로 삭제된 과제 파일을 복구하지 않습니다. 과제 파일은 별도로 GitHub 등에 백업하세요.
+- 설치 프로그램 자체는 저장소에 포함하지 않습니다. winget을 통해 공급자 배포본으로 설치합니다.

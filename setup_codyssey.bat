@@ -1,6 +1,6 @@
 @echo off
 if /i not "%~1"=="--run" (
-    start "Codyssey Basic Setup" "%ComSpec%" /k call "%~f0" --run
+    start "Codyssey Basic Setup" "%ComSpec%" /d /k ""%~f0" --run"
     exit /b 0
 )
 shift
